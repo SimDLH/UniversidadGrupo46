@@ -114,18 +114,18 @@ public class MateriaData {
             
             ResultSet rs = ps.executeQuery();
             while (rs.next()) {
-                materia = new Materia();
-                materia.setIdMateria(id);
+                Materia materia = new Materia();
+                materia.setIdMateria(rs.getInt("idMateria"));
                 materia.setNombre(rs.getString("nombre"));
                 materia.setAnioMateria(rs.getInt("año"));
                 materia.setEstado(true);
-                materias.add(e)
+                materias.add(materia);
             }
             ps.close();
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, "Error al acceder a materia");
         }
-        return materia;
+        return materias;
         
     }
     
