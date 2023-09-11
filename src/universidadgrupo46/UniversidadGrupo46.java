@@ -22,9 +22,17 @@ public class UniversidadGrupo46 {
     public static void main(String[] args) {
         // TODO code application logic here
         Connection con = Conexion.getConnexion();
-        Materia matematica = new Materia("Matematica", 1, true);
+        Materia matematica = new Materia(2, "Matematica 1", 1, true);
+        Materia base = new Materia("Base de Datos", 1, true);
+        MateriaData base1 = new MateriaData();
         MateriaData mat = new MateriaData();
-        mat.guardarMateria(matematica);
+        //mat.guardarMateria(matematica);
+        //mat.modificarMateria(matematica);
+        //mat.eliminarMateria(2);
+        //base1.guardarMateria(base);
+        Materia materiaEncontrada = base1.buscarMateria(3);
+        System.out.println("Materia encomtrada " + materiaEncontrada.getNombre());
+
     }
-    
+
 }
