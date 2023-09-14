@@ -30,7 +30,7 @@ public class UniversidadGrupo46 {
         Connection con = Conexion.getConnexion();
         Alumno alu = new Alumno();
 
-        AlumnoData alu1 = new AlumnoData();
+        /* AlumnoData alu1 = new AlumnoData();
         alu = alu1.buscarAlumno(2);
         Materia mat = new Materia();
         MateriaData mat1 = new MateriaData();
@@ -38,7 +38,17 @@ public class UniversidadGrupo46 {
         Inscripcion in = new Inscripcion(alu, mat, 9.66, true);
         InscripcionData insc = new InscripcionData();
         //insc.guardarInscripcion(in);
-        insc.actualizarNota(2, 3, 9.1);
+       // insc.actualizarNota(2, 3, 9.1);*/
+        InscripcionData insc = new InscripcionData();
+        insc.obtenerInscripciones();
+        for (Inscripcion in : insc.obtenerInscripciones()) {
+            System.out.println("idInscripcion " + in.getIdInscripcion());
+            System.out.println("Alumno " + in.getAlumno().getNombre());
+            System.out.println("Materia " + in.getMateria().getNombre());
+            System.out.println("nota " + in.getNota());
+            System.out.println("-----------------------------------");
+
+        }
 
         //Alumno al1=new Alumno(23624123,"Martines","Jose",LocalDate.of(1993, 07, 14),true);
         //AlumnoData aluD=new AlumnoData();

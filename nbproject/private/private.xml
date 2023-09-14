@@ -3,18 +3,6 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-
-            <file>file:/C:/Users/coki_/OneDrive/Escritorio/Repo/UniversidadGrupo.46/src/universidadgrupo46/Entidades/Inscripcion.java</file>
-            <file>file:/C:/Users/coki_/OneDrive/Escritorio/Repo/UniversidadGrupo.46/src/universidadgrupo46/AccesoDeDatos/Conexion.java</file>
-            <file>file:/C:/Users/coki_/OneDrive/Escritorio/Repo/UniversidadGrupo.46/src/universidadgrupo46/Entidades/Alumno.java</file>
-
-            <file>file:/C:/Users/simon/Documents/NetBeansProjects/UniversidadGrupo46/src/universidadgrupo46/AccesoDeDatos/Conexion.java</file>
-            <file>file:/C:/Users/simon/Documents/NetBeansProjects/UniversidadGrupo46/src/universidadgrupo46/Entidades/Inscripcion.java</file>
-            <file>file:/C:/Users/simon/Documents/NetBeansProjects/UniversidadGrupo46/src/universidadgrupo46/UniversidadGrupo46.java</file>
-            <file>file:/C:/Users/simon/Documents/NetBeansProjects/UniversidadGrupo46/src/universidadgrupo46/AccesoDeDatos/AlumnoData.java</file>
-            <file>file:/C:/Users/simon/Documents/NetBeansProjects/UniversidadGrupo46/src/universidadgrupo46/Entidades/Materia.java</file>
-
-
             <file>file:/C:/Users/coki_/OneDrive/Escritorio/Repo/UniversidadGrupo.46/src/universidadgrupo46/Entidades/Inscripcion.java</file>
             <file>file:/C:/Users/coki_/OneDrive/Escritorio/Repo/UniversidadGrupo.46/src/universidadgrupo46/AccesoDeDatos/MateriaData.java</file>
             <file>file:/C:/Users/coki_/OneDrive/Escritorio/Repo/UniversidadGrupo.46/src/universidadgrupo46/AccesoDeDatos/Conexion.java</file>
@@ -22,7 +10,7 @@
             <file>file:/C:/Users/coki_/OneDrive/Escritorio/Repo/UniversidadGrupo.46/src/universidadgrupo46/Entidades/Alumno.java</file>
             <file>file:/C:/Users/coki_/OneDrive/Escritorio/Repo/UniversidadGrupo.46/src/universidadgrupo46/UniversidadGrupo46.java</file>
             <file>file:/C:/Users/coki_/OneDrive/Escritorio/Repo/UniversidadGrupo.46/src/universidadgrupo46/Entidades/Materia.java</file>
-
+            <file>file:/C:/Users/coki_/OneDrive/Escritorio/Repo/UniversidadGrupo.46/src/universidadgrupo46/AccesoDeDatos/InscripcionData.java</file>
         </group>
     </open-files>
 </project-private>
