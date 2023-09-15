@@ -99,7 +99,7 @@ public class UniversidadGrupo46 {
          System.out.println("----------------------------------------------------");
      }*/
    
-   for (Alumno alumno:ins.obtenerAlumnosXMateria(2)){
+  /* for (Alumno alumno:ins.obtenerAlumnosXMateria(2)){
          System.out.println("Id del alumno "+alumno.getIdAlumno());
          System.out.println("DNI "+alumno.getDni());
          System.out.println("Apellido "+alumno.getApellido());
@@ -107,6 +107,14 @@ public class UniversidadGrupo46 {
          System.out.println("Fecha de nacimiento "+alumno.getFechaNac());
          System.out.println("----------------------------------------------------");
      }
-    }
+    }*/
+  for (Materia materia:ins.obtenerMateriasNOCursadas(4)){
+         System.out.println("Id de materia "+materia.getIdMateria());
+         System.out.println("Materia "+materia.getNombre());
+         System.out.println("Año de la materia "+materia.getAnioMateria());
+         System.out.println("----------------------------------------------------");
+     }
+
+}
 
 }
