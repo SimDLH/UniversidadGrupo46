@@ -109,9 +109,7 @@ public class UniversidadGrupo46 {
      }
     }*/
   for (Materia materia:ins.obtenerMateriasNOCursadas(4)){
-         System.out.println("Id de materia "+materia.getIdMateria());
          System.out.println("Materia "+materia.getNombre());
-         System.out.println("Año de la materia "+materia.getAnioMateria());
          System.out.println("----------------------------------------------------");
      }
 
