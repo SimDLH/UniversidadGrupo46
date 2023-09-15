@@ -164,9 +164,9 @@ public class InscripcionData {
       }
       public ArrayList<Materia> obtenerMateriasNOCursadas(int idAlumno){
           ArrayList<Materia> materias=new ArrayList<Materia>();
-          String sql="SELECT inscripcion.idMateria ,nombre ,año "
-                  + " FROM inscripcion JOIN materia WHERE inscripcion.idMateria=materia.idMateria AND inscripcion.idAlumno!=?";
+          String sql="SELECT nombre FROM materia WHERE idMateria NOT IN (SELECT idMateria FROM inscripcion WHERE idAlumno = ?)";
         try {
+            
             PreparedStatement ps=con.prepareStatement(sql);
             ps.setInt(1, idAlumno);
             ResultSet rs=ps.executeQuery();
@@ -176,6 +176,7 @@ public class InscripcionData {
                 materia.setIdMateria(rs.getInt("IdMateria"));
                 materia.setNombre(rs.getString("nombre"));
                 materia.setAnioMateria(rs.getInt("año"));
+                materia.setEstado(true);
                 materias.add(materia);
             }
             ps.close();
