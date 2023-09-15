@@ -28,17 +28,17 @@ public class UniversidadGrupo46 {
     public static void main(String[] args) {
         // TODO code application logic here
         Connection con = Conexion.getConnexion();
-        Alumno alu = new Alumno();
+       /* Alumno alu = new Alumno();
 
         AlumnoData alu1 = new AlumnoData();
         alu = alu1.buscarAlumno(2);
         Materia mat = new Materia();
         MateriaData mat1 = new MateriaData();
         mat = mat1.buscarMateria(3);
-        Inscripcion in = new Inscripcion(alu, mat, 9.66, true);
+        Inscripcion in = new Inscripcion(alu, mat, 9.66);
         InscripcionData insc = new InscripcionData();
         //insc.guardarInscripcion(in);
-        insc.actualizarNota(2, 3, 9.1);
+        insc.actualizarNota(2, 3, 9.1);*/
 
         //Alumno al1=new Alumno(23624123,"Martines","Jose",LocalDate.of(1993, 07, 14),true);
         //AlumnoData aluD=new AlumnoData();
@@ -77,6 +77,36 @@ public class UniversidadGrupo46 {
         System.out.println("Materia encomtrada " + materiaEncontrada.getNombre());
 
     }*/
+      InscripcionData ins=new InscripcionData();
+     /* for (Inscripcion insc:ins.obtenerInscripciones()){
+          System.out.println("Id de inscripcion "+insc.getIdInscripcion());
+          System.out.println("Nombre del alumno "+insc.getAlumno().getNombre());
+          System.out.println("Apellido del alumno "+insc.getAlumno().getApellido());
+          System.out.println("Materia "+insc.getMateria().getNombre());
+          System.out.println("Nota "+insc.getNota());
+          System.out.println("--------------------------------------------------");
+      }*/
+     /*for (Inscripcion insc:ins.obtenerInscripcionesPorAlumno(4)){
+          System.out.println("Id de inscripcion "+insc.getIdInscripcion());
+          System.out.println("Materia "+insc.getMateria().getNombre());
+          System.out.println("Nota "+insc.getNota());
+          System.out.println("--------------------------------------------------");
+      }*/
+   /*  for (Materia materia:ins.obtenerMateriasCursadas(4)){
+         System.out.println("Id de materia "+materia.getIdMateria());
+         System.out.println("Materia "+materia.getNombre());
+         System.out.println("Año de la materia "+materia.getAnioMateria());
+         System.out.println("----------------------------------------------------");
+     }*/
+   
+   for (Alumno alumno:ins.obtenerAlumnosXMateria(2)){
+         System.out.println("Id del alumno "+alumno.getIdAlumno());
+         System.out.println("DNI "+alumno.getDni());
+         System.out.println("Apellido "+alumno.getApellido());
+         System.out.println("Nombre "+alumno.getNombre());
+         System.out.println("Fecha de nacimiento "+alumno.getFechaNac());
+         System.out.println("----------------------------------------------------");
+     }
     }
 
 }

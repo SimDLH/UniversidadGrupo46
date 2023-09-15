@@ -14,24 +14,21 @@ public class Inscripcion {
     private Alumno alumno;
     private Materia materia;
     private double nota;
-    private boolean estado;
 
     public Inscripcion() {
     }
 
-    public Inscripcion(int IdInscripcion, Alumno alumno, Materia materia, double nota, boolean estado) {
+    public Inscripcion(int IdInscripcion, Alumno alumno, Materia materia, double nota) {
         this.IdInscripcion = IdInscripcion;
         this.alumno = alumno;
         this.materia = materia;
         this.nota = nota;
-        this.estado = estado;
     }
 
-    public Inscripcion(Alumno alumno, Materia materia, double nota, boolean estado) {
+    public Inscripcion(Alumno alumno, Materia materia, double nota) {
         this.alumno = alumno;
         this.materia = materia;
         this.nota = nota;
-        this.estado = estado;
     }
 
     public int getIdInscripcion() {
@@ -64,14 +61,6 @@ public class Inscripcion {
 
     public void setNota(double nota) {
         this.nota = nota;
-    }
-
-    public boolean isEstado() {
-        return estado;
-    }
-
-    public void setEstado(boolean estado) {
-        this.estado = estado;
     }
 
     @Override
