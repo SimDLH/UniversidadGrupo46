@@ -5,6 +5,10 @@
  */
 package universidadgrupo46.Vistas;
 
+import javax.swing.JOptionPane;
+import universidadgrupo46.AccesoDeDatos.MateriaData;
+import universidadgrupo46.Entidades.Materia;
+
 /**
  *
  * @author simon
@@ -17,6 +21,7 @@ public class GestionMateria extends javax.swing.JInternalFrame {
     public GestionMateria() {
         initComponents();
     }
+    MateriaData mat=new MateriaData();
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -35,7 +40,7 @@ public class GestionMateria extends javax.swing.JInternalFrame {
         textCodigoMat = new javax.swing.JTextField();
         textNombreMat = new javax.swing.JTextField();
         textAñoMat = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        buttonBuscarMat = new javax.swing.JButton();
         buttonEstadoMat = new javax.swing.JRadioButton();
         buttonNuevo = new javax.swing.JButton();
         buttonEliminarMat = new javax.swing.JButton();
@@ -54,15 +59,36 @@ public class GestionMateria extends javax.swing.JInternalFrame {
 
         jLabel5.setText("Estado");
 
-        jButton1.setText("Buscar");
+        textCodigoMat.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                textCodigoMatActionPerformed(evt);
+            }
+        });
+
+        buttonBuscarMat.setText("Buscar");
+        buttonBuscarMat.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonBuscarMatActionPerformed(evt);
+            }
+        });
 
         buttonNuevo.setText("Nuevo");
         buttonNuevo.setEnabled(false);
 
         buttonEliminarMat.setText("Eliminar");
         buttonEliminarMat.setEnabled(false);
+        buttonEliminarMat.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonEliminarMatActionPerformed(evt);
+            }
+        });
 
         buttonGuardarMat.setText("Guardar");
+        buttonGuardarMat.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonGuardarMatActionPerformed(evt);
+            }
+        });
 
         buttonSalirMat.setText("Salir");
         buttonSalirMat.addActionListener(new java.awt.event.ActionListener() {
@@ -111,7 +137,7 @@ public class GestionMateria extends javax.swing.JInternalFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 43, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(buttonSalirMat)
-                    .addComponent(jButton1))
+                    .addComponent(buttonBuscarMat))
                 .addGap(22, 22, 22))
         );
         layout.setVerticalGroup(
@@ -125,7 +151,7 @@ public class GestionMateria extends javax.swing.JInternalFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(textCodigoMat, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton1))
+                    .addComponent(buttonBuscarMat))
                 .addGap(21, 21, 21)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
@@ -135,9 +161,9 @@ public class GestionMateria extends javax.swing.JInternalFrame {
                     .addComponent(jLabel4)
                     .addComponent(textAñoMat, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(20, 20, 20)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel5)
-                    .addComponent(buttonEstadoMat))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(buttonEstadoMat)
+                    .addComponent(jLabel5))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(buttonNuevo)
@@ -154,14 +180,46 @@ public class GestionMateria extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_buttonSalirMatActionPerformed
 
+    private void buttonGuardarMatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonGuardarMatActionPerformed
+        Materia materia;
+        int c=Integer.parseInt(textCodigoMat.getText());
+        materia=mat.buscarMateria(c);
+        if (materia==null){
+            materia.setNombre(textNombreMat.getText());
+            int an=Integer.parseInt(textAñoMat.getText());
+            materia.setAnioMateria(an);
+            materia.setEstado(true);
+            mat.guardarMateria(materia);
+        }else{
+            mat.modificarMateria(materia);
+        }
+    }//GEN-LAST:event_buttonGuardarMatActionPerformed
+
+    private void textCodigoMatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textCodigoMatActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_textCodigoMatActionPerformed
+
+    private void buttonBuscarMatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonBuscarMatActionPerformed
+        Materia materia;
+        int c=Integer.parseInt(textCodigoMat.getText());
+        materia=mat.buscarMateria(c);
+        JOptionPane.showMessageDialog(null, "Materia: "+materia.getNombre()+""
+                + "Año: "+materia.getAnioMateria());
+    }//GEN-LAST:event_buttonBuscarMatActionPerformed
+
+    private void buttonEliminarMatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonEliminarMatActionPerformed
+        int c=Integer.parseInt(textCodigoMat.getText());
+        mat.eliminarMateria(c);
+    }//GEN-LAST:event_buttonEliminarMatActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton buttonBuscarMat;
     private javax.swing.JButton buttonEliminarMat;
     private javax.swing.JRadioButton buttonEstadoMat;
     private javax.swing.JButton buttonGuardarMat;
     private javax.swing.JButton buttonNuevo;
     private javax.swing.JButton buttonSalirMat;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
