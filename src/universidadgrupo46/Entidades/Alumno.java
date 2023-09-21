@@ -7,12 +7,12 @@ package universidadgrupo46.Entidades;
 
 import java.time.LocalDate;
 
-
 /**
  *
  * @author simon
  */
 public class Alumno {
+
     private int IdAlumno;
     private int dni;
     private String apellido;
@@ -90,10 +90,7 @@ public class Alumno {
 
     @Override
     public String toString() {
-        return "Alumno{" + "IdAlumno=" + IdAlumno + ", dni=" + dni + ", apellido=" + apellido + ", nombre=" + nombre + '}';
+        return " DNI:" + dni + " " + apellido + " " + nombre;
     }
 
-    
-    
-    
 }

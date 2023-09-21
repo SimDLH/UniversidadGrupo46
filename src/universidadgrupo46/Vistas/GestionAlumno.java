@@ -42,7 +42,6 @@ public class GestionAlumno extends javax.swing.JInternalFrame {
         butonEliminar = new javax.swing.JButton();
         butonGuardar = new javax.swing.JButton();
         butonSalir = new javax.swing.JButton();
-        chooseFecha = new com.toedter.calendar.JDateChooser();
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel1.setText("Alumno");
@@ -92,9 +91,7 @@ public class GestionAlumno extends javax.swing.JInternalFrame {
                                             .addComponent(textNombre, javax.swing.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE)))
                                     .addGroup(layout.createSequentialGroup()
                                         .addGap(77, 77, 77)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(chooseFecha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(checkEstado))))
+                                        .addComponent(checkEstado)))
                                 .addGap(18, 18, Short.MAX_VALUE)
                                 .addComponent(buttonBuscar))
                             .addGroup(layout.createSequentialGroup()
@@ -134,10 +131,8 @@ public class GestionAlumno extends javax.swing.JInternalFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
                     .addComponent(checkEstado))
-                .addGap(38, 38, 38)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel6)
-                    .addComponent(chooseFecha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(40, 40, 40)
+                .addComponent(jLabel6)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(buttonNuevo)
@@ -150,7 +145,6 @@ public class GestionAlumno extends javax.swing.JInternalFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton butonEliminar;
     private javax.swing.JButton butonGuardar;
@@ -158,7 +152,6 @@ public class GestionAlumno extends javax.swing.JInternalFrame {
     private javax.swing.JButton buttonBuscar;
     private javax.swing.JButton buttonNuevo;
     private javax.swing.JRadioButton checkEstado;
-    private com.toedter.calendar.JDateChooser chooseFecha;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
