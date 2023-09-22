@@ -6,10 +6,13 @@
 package universidadgrupo46.Vistas;
 
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import universidadgrupo46.AccesoDeDatos.AlumnoData;
+import universidadgrupo46.AccesoDeDatos.InscripcionData;
 import universidadgrupo46.AccesoDeDatos.MateriaData;
 import universidadgrupo46.Entidades.Alumno;
+import universidadgrupo46.Entidades.Inscripcion;
 import universidadgrupo46.Entidades.Materia;
 
 /**
@@ -23,6 +26,7 @@ private DefaultTableModel modelo=new DefaultTableModel();
      */
     AlumnoData ali=new AlumnoData();
    MateriaData mati=new MateriaData();
+   InscripcionData data=new InscripcionData();
     public FormularioDeInscripciones() {
         initComponents();
         armarCabesera();
@@ -38,6 +42,7 @@ private DefaultTableModel modelo=new DefaultTableModel();
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        botones = new javax.swing.ButtonGroup();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -59,8 +64,18 @@ private DefaultTableModel modelo=new DefaultTableModel();
         jLabel3.setText("Listado de materias");
 
         buttonInscripto.setText("Materias inscriptas");
+        buttonInscripto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonInscriptoActionPerformed(evt);
+            }
+        });
 
         ButtonNoInscripto.setText("Materias no inscriptas");
+        ButtonNoInscripto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ButtonNoInscriptoActionPerformed(evt);
+            }
+        });
 
         tablaMaterias.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -76,8 +91,18 @@ private DefaultTableModel modelo=new DefaultTableModel();
         jScrollPane3.setViewportView(tablaMaterias);
 
         buttonInscrivir.setText("Inscribir");
+        buttonInscrivir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonInscrivirActionPerformed(evt);
+            }
+        });
 
         buttonAnular.setText("Anular inscripcion");
+        buttonAnular.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonAnularActionPerformed(evt);
+            }
+        });
 
         buttonSalirForm.setText("Salir");
         buttonSalirForm.addActionListener(new java.awt.event.ActionListener() {
@@ -143,7 +168,7 @@ private DefaultTableModel modelo=new DefaultTableModel();
                     .addComponent(ButtonNoInscripto))
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 111, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 115, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(buttonInscrivir)
                     .addComponent(buttonAnular)
@@ -159,12 +184,59 @@ private DefaultTableModel modelo=new DefaultTableModel();
     }//GEN-LAST:event_buttonSalirFormActionPerformed
      
     private void cbAlumnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbAlumnoActionPerformed
-                 
+        botones.add(buttonInscripto);
+        botones.add(ButtonNoInscripto);
+        if(buttonInscripto.isSelected()){
+            materiasInscriptas();
+        }else if(ButtonNoInscripto.isSelected()){
+            materiasNoInscriptas();
+        }
     }//GEN-LAST:event_cbAlumnoActionPerformed
+
+    private void buttonInscriptoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonInscriptoActionPerformed
+        buttonInscrivir.setEnabled(false);
+        buttonAnular.setEnabled(true);
+        materiasInscriptas();
+    }//GEN-LAST:event_buttonInscriptoActionPerformed
+
+    private void ButtonNoInscriptoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonNoInscriptoActionPerformed
+         buttonAnular.setEnabled(false);
+         buttonInscrivir.setEnabled(true);
+         materiasNoInscriptas();
+    }//GEN-LAST:event_ButtonNoInscriptoActionPerformed
+
+    private void buttonInscrivirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonInscrivirActionPerformed
+        int fila=tablaMaterias.getSelectedRow();
+        if (fila!=-1){
+            int id=(Integer)tablaMaterias.getValueAt(fila, 0);
+            String nombre=(String)tablaMaterias.getValueAt(fila, 1);
+            int año=(Integer)tablaMaterias.getValueAt(fila,2);
+            Alumno alumno=(Alumno)cbAlumno.getSelectedItem();
+            Materia materia=new Materia(id,nombre,año,true);
+            Inscripcion inscripcion=new Inscripcion(alumno,materia,0);
+            data.guardarInscripcion(inscripcion);
+            materiasNoInscriptas();
+        }else{
+            JOptionPane.showMessageDialog(null, "Deve seleccionar una materia para inscrivirse");
+        }
+    }//GEN-LAST:event_buttonInscrivirActionPerformed
+
+    private void buttonAnularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonAnularActionPerformed
+        int fila=tablaMaterias.getSelectedRow();
+        if (fila!=-1){
+            int id=(Integer)tablaMaterias.getValueAt(fila, 0);
+            Alumno alumno=(Alumno)cbAlumno.getSelectedItem();
+            data.borrarInscripcionMateriaAlumno(alumno.getIdAlumno(), id);
+            materiasInscriptas();
+        }else{
+            JOptionPane.showMessageDialog(null, "Deve seleccionar una materia para anular la inscripcion");
+        }
+    }//GEN-LAST:event_buttonAnularActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JRadioButton ButtonNoInscripto;
+    private javax.swing.ButtonGroup botones;
     private javax.swing.JButton buttonAnular;
     private javax.swing.JRadioButton buttonInscripto;
     private javax.swing.JButton buttonInscrivir;
@@ -195,7 +267,26 @@ private DefaultTableModel modelo=new DefaultTableModel();
         }
     }
 
+    private void limpiarTabla(){
+        int fila=modelo.getRowCount();
+        for(int i=fila-1;i>=0;i--){
+            modelo.removeRow(i);
+        }
+    }
 
-
-
+    private void materiasInscriptas(){
+        limpiarTabla();
+        Alumno alumno=(Alumno)cbAlumno.getSelectedItem();
+        ArrayList<Materia> materia=data.obtenerMateriasCursadas(alumno.getIdAlumno());
+        cargarTabla(materia);
+    }
+    
+    private void materiasNoInscriptas(){
+        limpiarTabla();
+        Alumno alumno=(Alumno)cbAlumno.getSelectedItem();
+        ArrayList<Materia> materia=data.obtenerMateriasNOCursadas(alumno.getIdAlumno());
+        cargarTabla(materia);
+    }
+    
+    
 }
