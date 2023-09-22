@@ -176,7 +176,7 @@ public class Escritorio extends javax.swing.JFrame {
     private void jMenuItemAxMatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemAxMatActionPerformed
         escritorio.removeAll();
         escritorio.repaint();
-        ListadoAlumnosPorMateria listado = new ListadoAlumnosPorMateria();
+        ConsultaDeAlumnosPorMateria listado = new ConsultaDeAlumnosPorMateria();
         listado.setVisible(true);
         escritorio.add(listado);
         escritorio.moveToFront(listado);
