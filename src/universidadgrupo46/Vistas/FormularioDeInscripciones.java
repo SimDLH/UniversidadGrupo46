@@ -38,6 +38,7 @@ private DefaultTableModel modelo=new DefaultTableModel();
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        botonGrupoMaterInsYNoIns = new javax.swing.ButtonGroup();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -58,8 +59,10 @@ private DefaultTableModel modelo=new DefaultTableModel();
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel3.setText("Listado de materias");
 
+        botonGrupoMaterInsYNoIns.add(buttonInscripto);
         buttonInscripto.setText("Materias inscriptas");
 
+        botonGrupoMaterInsYNoIns.add(ButtonNoInscripto);
         ButtonNoInscripto.setText("Materias no inscriptas");
 
         tablaMaterias.setModel(new javax.swing.table.DefaultTableModel(
@@ -165,6 +168,7 @@ private DefaultTableModel modelo=new DefaultTableModel();
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JRadioButton ButtonNoInscripto;
+    private javax.swing.ButtonGroup botonGrupoMaterInsYNoIns;
     private javax.swing.JButton buttonAnular;
     private javax.swing.JRadioButton buttonInscripto;
     private javax.swing.JButton buttonInscrivir;
