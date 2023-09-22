@@ -3,6 +3,7 @@ package universidadgrupo46.Vistas;
 
 import javax.swing.table.DefaultTableModel;
 import universidadgrupo46.Entidades.Alumno;
+import universidadgrupo46.Entidades.Materia;
 
 
 public class ConsultaDeAlumnosPorMateria extends javax.swing.JInternalFrame {
@@ -11,6 +12,7 @@ public class ConsultaDeAlumnosPorMateria extends javax.swing.JInternalFrame {
     
     public ConsultaDeAlumnosPorMateria() {
         initComponents();
+        llenarCombo();
         armarTablaConsul();
     }
 
@@ -119,6 +121,10 @@ public class ConsultaDeAlumnosPorMateria extends javax.swing.JInternalFrame {
         
         //int alumno=Integer.parseInt(comboBoxListMater.getText());
         //cargarDatos(Alumno alumno);
+        //o tambien puede ser este hay que ver....
+        //Materia materiaSeleccionada=(Materia)comboBoxListMater.getSelectedItem();
+        //tablaAlumXMater.setText(materiaSeleccionada.getIdMateria()+"");
+       
     }//GEN-LAST:event_comboBoxListMaterActionPerformed
 
 
@@ -131,6 +137,11 @@ public class ConsultaDeAlumnosPorMateria extends javax.swing.JInternalFrame {
     private javax.swing.JTable tablaAlumXMater;
     // End of variables declaration//GEN-END:variables
 
+    private void llenarCombo(){
+    //comboBoxListMater.addItem(new Materia(IdMateria,""));
+    }
+    
+    
     private void armarTablaConsul(){
         modelo2.addColumn("ID");
         modelo2.addColumn("DNI");
