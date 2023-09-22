@@ -50,6 +50,11 @@ public class ConsultaDeAlumnosPorMateria extends javax.swing.JInternalFrame {
         jScrollPane1.setViewportView(jTable1);
 
         botonSalirConsAlumXMater.setText("Salir");
+        botonSalirConsAlumXMater.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonSalirConsAlumXMaterActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -94,6 +99,11 @@ public class ConsultaDeAlumnosPorMateria extends javax.swing.JInternalFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void botonSalirConsAlumXMaterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonSalirConsAlumXMaterActionPerformed
+        // TODO add your handling code here:
+        dispose();
+    }//GEN-LAST:event_botonSalirConsAlumXMaterActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton botonSalirConsAlumXMater;
@@ -104,5 +114,6 @@ public class ConsultaDeAlumnosPorMateria extends javax.swing.JInternalFrame {
     private javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables
 
-
-}
+private void cargarCombo(){
+    comboBoxListMater.addItem(new IDMateria);
+ }
