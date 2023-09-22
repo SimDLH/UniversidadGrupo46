@@ -178,6 +178,7 @@ public class GestionMateria extends javax.swing.JInternalFrame {
 
     private void buttonSalirMatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonSalirMatActionPerformed
         // TODO add your handling code here:
+        dispose();
     }//GEN-LAST:event_buttonSalirMatActionPerformed
 
     private void buttonGuardarMatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonGuardarMatActionPerformed

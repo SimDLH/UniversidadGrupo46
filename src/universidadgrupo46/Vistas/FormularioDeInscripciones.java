@@ -159,6 +159,7 @@ private DefaultTableModel modelo=new DefaultTableModel();
 
     private void buttonSalirFormActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonSalirFormActionPerformed
         // TODO add your handling code here:
+        dispose();
     }//GEN-LAST:event_buttonSalirFormActionPerformed
      
     private void cbAlumnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbAlumnoActionPerformed
