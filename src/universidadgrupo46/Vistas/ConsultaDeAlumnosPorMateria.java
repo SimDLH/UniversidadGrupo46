@@ -7,6 +7,7 @@ public class ConsultaDeAlumnosPorMateria extends javax.swing.JInternalFrame {
     
     public ConsultaDeAlumnosPorMateria() {
         initComponents();
+        armarTablaConsul();
     }
 
     
@@ -18,7 +19,7 @@ public class ConsultaDeAlumnosPorMateria extends javax.swing.JInternalFrame {
         etiquetaSelecMater = new javax.swing.JLabel();
         comboBoxListMater = new javax.swing.JComboBox<>();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tablaAlumXMater = new javax.swing.JTable();
         botonSalirConsAlumXMater = new javax.swing.JButton();
 
         etiquetaListAlumXMater.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -28,7 +29,7 @@ public class ConsultaDeAlumnosPorMateria extends javax.swing.JInternalFrame {
 
         comboBoxListMater.setEditable(true);
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tablaAlumXMater.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -47,7 +48,7 @@ public class ConsultaDeAlumnosPorMateria extends javax.swing.JInternalFrame {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(tablaAlumXMater);
 
         botonSalirConsAlumXMater.setText("Salir");
         botonSalirConsAlumXMater.addActionListener(new java.awt.event.ActionListener() {
@@ -111,9 +112,21 @@ public class ConsultaDeAlumnosPorMateria extends javax.swing.JInternalFrame {
     private javax.swing.JLabel etiquetaListAlumXMater;
     private javax.swing.JLabel etiquetaSelecMater;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
+    private javax.swing.JTable tablaAlumXMater;
     // End of variables declaration//GEN-END:variables
 
-private void cargarCombo(){
-    comboBoxListMater.addItem(new IDMateria);
- }
+    private void armarTablaConsul(){
+        modelo2.addColumn("ID");
+        modelo2.addColumn("DNI");
+        modelo2.addColumn("Apellido");
+        modelo2.addColumn("Nombre");
+        tablaAlumXMater.setModel(modelo2);
+    }
+    
+    private void cargarAlumnos(){
+        int id;
+        id=comboBoxListMater.getItemAt(comboBoxListMater.getSelectedIndex()).getIdAlumno();
+        ArrayList<Alumno> listaAlumno=ins.obtenerAlumnos(id);       
+        }
+        
+    }
