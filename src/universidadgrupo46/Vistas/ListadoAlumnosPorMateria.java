@@ -55,6 +55,11 @@ public class ListadoAlumnosPorMateria extends javax.swing.JInternalFrame {
         jScrollPane1.setViewportView(tablaAlumPorMat);
 
         buttonSalidaAluXMat.setText("Salir");
+        buttonSalidaAluXMat.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonSalidaAluXMatActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -99,6 +104,11 @@ public class ListadoAlumnosPorMateria extends javax.swing.JInternalFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void buttonSalidaAluXMatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonSalidaAluXMatActionPerformed
+        // TODO add your handling code here:
+        dispose();
+    }//GEN-LAST:event_buttonSalidaAluXMatActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

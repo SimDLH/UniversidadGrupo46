@@ -95,6 +95,11 @@ public class GestionAlumno extends javax.swing.JInternalFrame {
         });
 
         butonSalir.setText("Salir");
+        butonSalir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                butonSalirActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -219,6 +224,11 @@ public class GestionAlumno extends javax.swing.JInternalFrame {
         }catch(NumberFormatException nf){
         JOptionPane.showMessageDialog(null, "DNI ingresado invalido");}
     }//GEN-LAST:event_butonEliminarActionPerformed
+
+    private void butonSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butonSalirActionPerformed
+        // TODO add your handling code here:
+        dispose();
+    }//GEN-LAST:event_butonSalirActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
