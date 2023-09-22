@@ -1,9 +1,13 @@
 
 package universidadgrupo46.Vistas;
 
+import javax.swing.table.DefaultTableModel;
+import universidadgrupo46.Entidades.Alumno;
+
 
 public class ConsultaDeAlumnosPorMateria extends javax.swing.JInternalFrame {
 
+    private DefaultTableModel modelo2=new DefaultTableModel();
     
     public ConsultaDeAlumnosPorMateria() {
         initComponents();
@@ -28,6 +32,11 @@ public class ConsultaDeAlumnosPorMateria extends javax.swing.JInternalFrame {
         etiquetaSelecMater.setText("Seleccione una Materia:");
 
         comboBoxListMater.setEditable(true);
+        comboBoxListMater.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                comboBoxListMaterActionPerformed(evt);
+            }
+        });
 
         tablaAlumXMater.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -105,6 +114,13 @@ public class ConsultaDeAlumnosPorMateria extends javax.swing.JInternalFrame {
         dispose();
     }//GEN-LAST:event_botonSalirConsAlumXMaterActionPerformed
 
+    private void comboBoxListMaterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboBoxListMaterActionPerformed
+        // TODO add your handling code here:
+        
+        //int alumno=Integer.parseInt(comboBoxListMater.getText());
+        //cargarDatos(Alumno alumno);
+    }//GEN-LAST:event_comboBoxListMaterActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton botonSalirConsAlumXMater;
@@ -123,10 +139,8 @@ public class ConsultaDeAlumnosPorMateria extends javax.swing.JInternalFrame {
         tablaAlumXMater.setModel(modelo2);
     }
     
-    private void cargarAlumnos(){
-        int id;
-        id=comboBoxListMater.getItemAt(comboBoxListMater.getSelectedIndex()).getIdAlumno();
-        ArrayList<Alumno> listaAlumno=ins.obtenerAlumnos(id);       
-        }
+    private void cargarDatos(Alumno alumno){
+        modelo2.addRow(new Object[]{alumno.getIdAlumno(),alumno.getDni(),alumno.getApellido(),alumno.getNombre()});
         
+    }
     }
