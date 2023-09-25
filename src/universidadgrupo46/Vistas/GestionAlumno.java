@@ -106,56 +106,59 @@ public class GestionAlumno extends javax.swing.JInternalFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(34, 34, 34)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel2)
-                            .addComponent(jLabel3)
-                            .addComponent(jLabel4)
-                            .addComponent(jLabel5)
-                            .addComponent(jLabel6))
+                        .addGap(205, 205, 205)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(34, 34, 34)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
+                                .addComponent(buttonNuevo)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(layout.createSequentialGroup()
-                                        .addGap(37, 37, 37)
+                                        .addGap(125, 125, 125)
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                             .addComponent(textDoc)
                                             .addComponent(textApellido)
                                             .addComponent(textNombre, javax.swing.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE)))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(chooseFecha, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(butonSalir)
+                                        .addGap(35, 35, 35))
                                     .addGroup(layout.createSequentialGroup()
-                                        .addGap(77, 77, 77)
+                                        .addGap(33, 33, 33)
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(chooseFecha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(checkEstado))))
-                                .addGap(18, 49, Short.MAX_VALUE)
-                                .addComponent(buttonBuscar))
+                                            .addComponent(butonGuardar)
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addComponent(buttonBuscar)
+                                                .addGap(18, 18, 18)
+                                                .addComponent(butonEliminar))))))
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(3, 3, 3)
-                                .addComponent(butonEliminar)
-                                .addGap(35, 35, 35)
-                                .addComponent(butonGuardar)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 44, Short.MAX_VALUE)
-                                .addComponent(butonSalir)
-                                .addGap(26, 26, 26))))
-                    .addComponent(buttonNuevo))
-                .addContainerGap())
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(192, 192, 192))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel2)
+                                    .addComponent(jLabel3)
+                                    .addComponent(jLabel4)
+                                    .addComponent(jLabel5)
+                                    .addComponent(jLabel6))
+                                .addGap(142, 142, 142)
+                                .addComponent(checkEstado)))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addGap(29, 29, 29)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(textDoc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(buttonBuscar))
+                    .addComponent(buttonBuscar)
+                    .addComponent(butonEliminar))
                 .addGap(29, 29, 29)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
@@ -168,15 +171,14 @@ public class GestionAlumno extends javax.swing.JInternalFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
                     .addComponent(checkEstado))
-                .addGap(38, 38, 38)
+                .addGap(35, 35, 35)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel6)
-                    .addComponent(chooseFecha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 37, Short.MAX_VALUE)
+                    .addComponent(chooseFecha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(butonGuardar))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 41, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(buttonNuevo)
-                    .addComponent(butonEliminar)
-                    .addComponent(butonGuardar)
                     .addComponent(butonSalir))
                 .addGap(23, 23, 23))
         );
@@ -189,17 +191,25 @@ public class GestionAlumno extends javax.swing.JInternalFrame {
         textApellido.setText("");
         textNombre.setText("");
         chooseFecha.setDate(null);
+        checkEstado.setSelected(false);
     }//GEN-LAST:event_buttonNuevoActionPerformed
 
     private void butonGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butonGuardarActionPerformed
         try{
+            if(textDoc.getText().isEmpty()){
+                JOptionPane.showMessageDialog(null, "Tiene que llenar la planilla para ingresar un alumno");
+            }else{
         int dni=Integer.parseInt(textDoc.getText());
         LocalDate fecha=chooseFecha.getDate().toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
         Alumno alumno =new Alumno(dni,textApellido.getText(),textNombre.getText(),fecha,checkEstado.isSelected());
         al.guardarAlumno(alumno);
+            }
+        }catch(NullPointerException ne){
+            JOptionPane.showMessageDialog(null, "Tiene que llenar la planilla para ingresar un alumno");
+        
         }catch(NumberFormatException nf){
-            JOptionPane.showMessageDialog(null, "Error al ingresar DNI");
-        }
+            JOptionPane.showMessageDialog(null, "Caracteres ingresados no validos");
+        }   
     }//GEN-LAST:event_butonGuardarActionPerformed
 
     private void buttonBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonBuscarActionPerformed
@@ -210,7 +220,10 @@ public class GestionAlumno extends javax.swing.JInternalFrame {
             textApellido.setText(alumno.getApellido());
             textNombre.setText(alumno.getNombre());
             chooseFecha.setDate(Date.valueOf(alumno.getFechaNac()));
-            checkEstado.setEnabled(alumno.isEstado());
+            if(alumno.isEstado()){
+                checkEstado.setSelected(true);
+            
+            }
         }catch(NumberFormatException nf){
             JOptionPane.showMessageDialog(null, "DNI ingresado invalido");
         }
@@ -218,9 +231,13 @@ public class GestionAlumno extends javax.swing.JInternalFrame {
 
     private void butonEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butonEliminarActionPerformed
         try{
-        int dni=Integer.parseInt(textDoc.getText());
-        Alumno alumno=al.buscarAlumnoDNI(dni);
-        al.eliminarAlumno(alumno.getIdAlumno());
+            if(textDoc.getText().isEmpty()){
+                JOptionPane.showMessageDialog(null, "Ingrese el DNI del alumno que desea borrar");
+            }else{
+              int dni=Integer.parseInt(textDoc.getText());
+              Alumno alumno=al.buscarAlumnoDNI(dni);
+              al.eliminarAlumno(alumno.getIdAlumno());
+            }
         }catch(NumberFormatException nf){
         JOptionPane.showMessageDialog(null, "DNI ingresado invalido");}
     }//GEN-LAST:event_butonEliminarActionPerformed

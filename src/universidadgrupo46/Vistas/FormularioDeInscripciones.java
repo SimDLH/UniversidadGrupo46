@@ -167,8 +167,8 @@ private DefaultTableModel modelo=new DefaultTableModel();
                     .addComponent(buttonInscripto)
                     .addComponent(ButtonNoInscripto))
                 .addGap(18, 18, 18)
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 115, Short.MAX_VALUE)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 42, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(buttonInscrivir)
                     .addComponent(buttonAnular)
@@ -180,7 +180,7 @@ private DefaultTableModel modelo=new DefaultTableModel();
     }// </editor-fold>//GEN-END:initComponents
 
     private void buttonSalirFormActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonSalirFormActionPerformed
-        // TODO add your handling code here:
+        dispose();
     }//GEN-LAST:event_buttonSalirFormActionPerformed
      
     private void cbAlumnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbAlumnoActionPerformed

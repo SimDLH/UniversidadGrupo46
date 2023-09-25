@@ -1,7 +1,11 @@
 
 package universidadgrupo46.Vistas;
 
+import java.util.ArrayList;
 import javax.swing.table.DefaultTableModel;
+import universidadgrupo46.AccesoDeDatos.AlumnoData;
+import universidadgrupo46.AccesoDeDatos.InscripcionData;
+import universidadgrupo46.AccesoDeDatos.MateriaData;
 import universidadgrupo46.Entidades.Alumno;
 import universidadgrupo46.Entidades.Materia;
 
@@ -9,11 +13,13 @@ import universidadgrupo46.Entidades.Materia;
 public class ConsultaDeAlumnosPorMateria extends javax.swing.JInternalFrame {
 
     private DefaultTableModel modelo2=new DefaultTableModel();
-    
+    AlumnoData alumn=new AlumnoData();
+    MateriaData mater=new MateriaData();
+    InscripcionData data=new InscripcionData();
     public ConsultaDeAlumnosPorMateria() {
         initComponents();
-        llenarCombo();
         armarTablaConsul();
+        llenarCombo();
     }
 
     
@@ -124,13 +130,14 @@ public class ConsultaDeAlumnosPorMateria extends javax.swing.JInternalFrame {
         //o tambien puede ser este hay que ver....
         //Materia materiaSeleccionada=(Materia)comboBoxListMater.getSelectedItem();
         //tablaAlumXMater.setText(materiaSeleccionada.getIdMateria()+"");
-       
+       materiasTodas();
+        Materia mate=(Materia)comboBoxListMater.getSelectedItem();
     }//GEN-LAST:event_comboBoxListMaterActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton botonSalirConsAlumXMater;
-    private javax.swing.JComboBox<String> comboBoxListMater;
+    private javax.swing.JComboBox<Materia> comboBoxListMater;
     private javax.swing.JLabel etiquetaListAlumXMater;
     private javax.swing.JLabel etiquetaSelecMater;
     private javax.swing.JScrollPane jScrollPane1;
@@ -138,7 +145,9 @@ public class ConsultaDeAlumnosPorMateria extends javax.swing.JInternalFrame {
     // End of variables declaration//GEN-END:variables
 
     private void llenarCombo(){
-    //comboBoxListMater.addItem(new Materia(IdMateria,""));
+        for(Materia mate:mater.listarMaterias()){
+            comboBoxListMater.addItem(mate);
+        }
     }
     
     
@@ -154,4 +163,23 @@ public class ConsultaDeAlumnosPorMateria extends javax.swing.JInternalFrame {
         modelo2.addRow(new Object[]{alumno.getIdAlumno(),alumno.getDni(),alumno.getApellido(),alumno.getNombre()});
         
     }
+    
+    private void cargarTabla(ArrayList<Alumno>alumnos){
+        for(Alumno alumn:alumnos){
+            modelo2.addRow(new Object[]{alumn.getIdAlumno(),alumn.getDni(),alumn.getApellido(),alumn.getNombre()});
     }
+    }
+    private void limpiarTabla(){
+        int fila=modelo2.getRowCount();
+        for(int i=fila-1;i>=0;i--){
+            modelo2.removeRow(i);
+        }
+    }
+    
+    private void materiasTodas(){
+        limpiarTabla();
+        Materia materia=(Materia)comboBoxListMater.getSelectedItem();
+        ArrayList<Alumno> alumno=data.obtenerAlumnosXMateria(materia.getIdMateria());
+        cargarTabla(alumno);
+    }
+}

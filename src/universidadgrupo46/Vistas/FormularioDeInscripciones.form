@@ -81,8 +81,8 @@
                   <Component id="ButtonNoInscripto" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Component id="jScrollPane3" min="-2" pref="99" max="-2" attributes="0"/>
-              <EmptySpace pref="115" max="32767" attributes="0"/>
+              <Component id="jScrollPane3" min="-2" pref="176" max="-2" attributes="0"/>
+              <EmptySpace pref="42" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="buttonInscrivir" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="buttonAnular" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -117,9 +117,6 @@
     </Component>
     <Component class="javax.swing.JRadioButton" name="buttonInscripto">
       <Properties>
-        <Property name="model" type="javax.swing.ButtonModel" editor="org.netbeans.modules.form.ComponentChooserEditor">
-          <ComponentRef name="default"/>
-        </Property>
         <Property name="text" type="java.lang.String" value="Materias inscriptas"/>
       </Properties>
       <Events>
@@ -128,9 +125,6 @@
     </Component>
     <Component class="javax.swing.JRadioButton" name="ButtonNoInscripto">
       <Properties>
-        <Property name="model" type="javax.swing.ButtonModel" editor="org.netbeans.modules.form.ComponentChooserEditor">
-          <ComponentRef name="default"/>
-        </Property>
         <Property name="text" type="java.lang.String" value="Materias no inscriptas"/>
       </Properties>
       <Events>

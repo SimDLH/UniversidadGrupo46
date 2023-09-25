@@ -32,7 +32,7 @@ public class MateriaData {
             ResultSet rs = ps.getGeneratedKeys();
             if (rs.next()) {
                 materia.setIdMateria(rs.getInt(1));
-                JOptionPane.showMessageDialog(null, "Alumno guardado exitosamente!");
+                JOptionPane.showMessageDialog(null, "Materia guardada exitosamente!");
 
             }
             ps.close();

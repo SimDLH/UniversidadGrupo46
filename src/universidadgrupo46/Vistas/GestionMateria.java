@@ -47,6 +47,7 @@ public class GestionMateria extends javax.swing.JInternalFrame {
         buttonGuardarMat = new javax.swing.JButton();
         buttonSalirMat = new javax.swing.JButton();
         jSeparator1 = new javax.swing.JSeparator();
+        jSeparator2 = new javax.swing.JSeparator();
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel1.setText("Materia");
@@ -72,8 +73,16 @@ public class GestionMateria extends javax.swing.JInternalFrame {
             }
         });
 
+        buttonEstadoMat.setSelected(true);
+        buttonEstadoMat.setEnabled(false);
+
         buttonNuevo.setText("Nuevo");
         buttonNuevo.setEnabled(false);
+        buttonNuevo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonNuevoActionPerformed(evt);
+            }
+        });
 
         buttonEliminarMat.setText("Eliminar");
         buttonEliminarMat.setEnabled(false);
@@ -110,35 +119,41 @@ public class GestionMateria extends javax.swing.JInternalFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(41, 41, 41)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel2)
+                            .addComponent(jLabel3)
+                            .addComponent(jLabel4)
+                            .addComponent(jLabel5))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel5)
-                                .addGap(84, 84, 84)
-                                .addComponent(buttonEstadoMat))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel2)
-                                    .addComponent(jLabel3)
-                                    .addComponent(jLabel4))
                                 .addGap(28, 28, 28)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(textCodigoMat)
                                     .addComponent(textNombreMat)
-                                    .addComponent(textAñoMat, javax.swing.GroupLayout.DEFAULT_SIZE, 146, Short.MAX_VALUE)))))
+                                    .addComponent(textAñoMat, javax.swing.GroupLayout.DEFAULT_SIZE, 146, Short.MAX_VALUE)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(77, 77, 77)
+                                .addComponent(buttonEstadoMat))))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(32, 32, 32)
                         .addComponent(buttonNuevo)
                         .addGap(36, 36, 36)
                         .addComponent(buttonEliminarMat)
                         .addGap(44, 44, 44)
-                        .addComponent(buttonGuardarMat))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(162, 162, 162)
-                        .addComponent(jLabel1)))
+                        .addComponent(buttonGuardarMat)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 43, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(buttonSalirMat)
-                    .addComponent(buttonBuscarMat))
-                .addGap(22, 22, 22))
+                .addComponent(buttonSalirMat)
+                .addGap(34, 34, 34))
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(buttonBuscarMat)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(191, 191, 191)
+                            .addComponent(jLabel1))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(32, 32, 32)
+                            .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 372, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -152,24 +167,27 @@ public class GestionMateria extends javax.swing.JInternalFrame {
                     .addComponent(jLabel2)
                     .addComponent(textCodigoMat, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(buttonBuscarMat))
-                .addGap(21, 21, 21)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(textNombreMat, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(27, 27, 27)
+                .addGap(18, 18, 18)
+                .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(textNombreMat, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(28, 28, 28)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
                     .addComponent(textAñoMat, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(20, 20, 20)
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(buttonEstadoMat)
-                    .addComponent(jLabel5))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(buttonNuevo)
-                    .addComponent(buttonEliminarMat)
-                    .addComponent(buttonGuardarMat)
-                    .addComponent(buttonSalirMat))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel5)
+                        .addGap(29, 29, 29)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(buttonNuevo)
+                            .addComponent(buttonEliminarMat)
+                            .addComponent(buttonGuardarMat)
+                            .addComponent(buttonSalirMat)))
+                    .addComponent(buttonEstadoMat))
                 .addGap(21, 21, 21))
         );
 
@@ -182,17 +200,16 @@ public class GestionMateria extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_buttonSalirMatActionPerformed
 
     private void buttonGuardarMatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonGuardarMatActionPerformed
-        Materia materia;
-        int c=Integer.parseInt(textCodigoMat.getText());
-        materia=mat.buscarMateria(c);
-        if (materia==null){
-            materia.setNombre(textNombreMat.getText());
-            int an=Integer.parseInt(textAñoMat.getText());
-            materia.setAnioMateria(an);
-            materia.setEstado(true);
+        try{
+        if (textNombreMat.getText().isEmpty() || textAñoMat.getText().isEmpty()){
+            JOptionPane.showMessageDialog(null, "Le falta ingresar datos");
+        } else{
+            int año=Integer.parseInt(textAñoMat.getText());    
+            Materia materia=new Materia(textNombreMat.getText(),año,buttonEstadoMat.isSelected());
             mat.guardarMateria(materia);
-        }else{
-            mat.modificarMateria(materia);
+        }
+        }catch(NumberFormatException nf){
+            JOptionPane.showMessageDialog(null, "Caracteres ingresado en año son invalidos");
         }
     }//GEN-LAST:event_buttonGuardarMatActionPerformed
 
@@ -201,17 +218,30 @@ public class GestionMateria extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_textCodigoMatActionPerformed
 
     private void buttonBuscarMatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonBuscarMatActionPerformed
-        Materia materia;
+        try{
         int c=Integer.parseInt(textCodigoMat.getText());
+        Materia materia;
         materia=mat.buscarMateria(c);
-        JOptionPane.showMessageDialog(null, "Materia: "+materia.getNombre()+""
-                + "Año: "+materia.getAnioMateria());
+        textNombreMat.setText(materia.getNombre());
+        textAñoMat.setText(materia.getAnioMateria()+"");
+        buttonEstadoMat.setSelected(materia.isEstado());
+        }catch(NumberFormatException ne){
+            JOptionPane.showMessageDialog(null, "Ingrese un codigo numerico para buscar una materia");
+        }catch(NullPointerException np){
+            
+        }
     }//GEN-LAST:event_buttonBuscarMatActionPerformed
 
     private void buttonEliminarMatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonEliminarMatActionPerformed
         int c=Integer.parseInt(textCodigoMat.getText());
         mat.eliminarMateria(c);
     }//GEN-LAST:event_buttonEliminarMatActionPerformed
+
+    private void buttonNuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonNuevoActionPerformed
+        textCodigoMat.setText("");
+        textNombreMat.setText("");
+        textAñoMat.setText("");
+    }//GEN-LAST:event_buttonNuevoActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -227,6 +257,7 @@ public class GestionMateria extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JSeparator jSeparator2;
     private javax.swing.JTextField textAñoMat;
     private javax.swing.JTextField textCodigoMat;
     private javax.swing.JTextField textNombreMat;
