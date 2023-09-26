@@ -168,9 +168,9 @@ public class GestionAlumno extends javax.swing.JInternalFrame {
                     .addComponent(jLabel4)
                     .addComponent(textNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(32, 32, 32)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel5)
-                    .addComponent(checkEstado))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(checkEstado)
+                    .addComponent(jLabel5))
                 .addGap(35, 35, 35)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel6)
@@ -214,6 +214,7 @@ public class GestionAlumno extends javax.swing.JInternalFrame {
 
     private void buttonBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonBuscarActionPerformed
         try{
+            
             int dni=Integer.parseInt(textDoc.getText());
             Alumno alumno;
             alumno=al.buscarAlumnoDNI(dni);
@@ -225,7 +226,7 @@ public class GestionAlumno extends javax.swing.JInternalFrame {
             
             }
         }catch(NumberFormatException nf){
-            JOptionPane.showMessageDialog(null, "DNI ingresado invalido");
+            JOptionPane.showMessageDialog(null, "Ingrese un ID valido para extraer los datos de un alumno");
         }
     }//GEN-LAST:event_buttonBuscarActionPerformed
 
