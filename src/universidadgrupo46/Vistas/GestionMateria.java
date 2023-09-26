@@ -21,7 +21,7 @@ public class GestionMateria extends javax.swing.JInternalFrame {
     public GestionMateria() {
         initComponents();
     }
-    MateriaData mat=new MateriaData();
+    MateriaData mat = new MateriaData();
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -77,7 +77,6 @@ public class GestionMateria extends javax.swing.JInternalFrame {
         buttonEstadoMat.setEnabled(false);
 
         buttonNuevo.setText("Nuevo");
-        buttonNuevo.setEnabled(false);
         buttonNuevo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 buttonNuevoActionPerformed(evt);
@@ -85,7 +84,6 @@ public class GestionMateria extends javax.swing.JInternalFrame {
         });
 
         buttonEliminarMat.setText("Eliminar");
-        buttonEliminarMat.setEnabled(false);
         buttonEliminarMat.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 buttonEliminarMatActionPerformed(evt);
@@ -200,15 +198,15 @@ public class GestionMateria extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_buttonSalirMatActionPerformed
 
     private void buttonGuardarMatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonGuardarMatActionPerformed
-        try{
-        if (textNombreMat.getText().isEmpty() || textAñoMat.getText().isEmpty()){
-            JOptionPane.showMessageDialog(null, "Le falta ingresar datos");
-        } else{
-            int año=Integer.parseInt(textAñoMat.getText());    
-            Materia materia=new Materia(textNombreMat.getText(),año,buttonEstadoMat.isSelected());
-            mat.guardarMateria(materia);
-        }
-        }catch(NumberFormatException nf){
+        try {
+            if (textNombreMat.getText().isEmpty() || textAñoMat.getText().isEmpty()) {
+                JOptionPane.showMessageDialog(null, "Le falta ingresar datos");
+            } else {
+                int año = Integer.parseInt(textAñoMat.getText());
+                Materia materia = new Materia(textNombreMat.getText(), año, buttonEstadoMat.isSelected());
+                mat.guardarMateria(materia);
+            }
+        } catch (NumberFormatException nf) {
             JOptionPane.showMessageDialog(null, "Caracteres ingresado en año son invalidos");
         }
     }//GEN-LAST:event_buttonGuardarMatActionPerformed
@@ -218,22 +216,22 @@ public class GestionMateria extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_textCodigoMatActionPerformed
 
     private void buttonBuscarMatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonBuscarMatActionPerformed
-        try{
-        int c=Integer.parseInt(textCodigoMat.getText());
-        Materia materia;
-        materia=mat.buscarMateria(c);
-        textNombreMat.setText(materia.getNombre());
-        textAñoMat.setText(materia.getAnioMateria()+"");
-        buttonEstadoMat.setSelected(materia.isEstado());
-        }catch(NumberFormatException ne){
+        try {
+            int c = Integer.parseInt(textCodigoMat.getText());
+            Materia materia;
+            materia = mat.buscarMateria(c);
+            textNombreMat.setText(materia.getNombre());
+            textAñoMat.setText(materia.getAnioMateria() + "");
+            buttonEstadoMat.setSelected(materia.isEstado());
+        } catch (NumberFormatException ne) {
             JOptionPane.showMessageDialog(null, "Ingrese un codigo numerico para buscar una materia");
-        }catch(NullPointerException np){
-            
+        } catch (NullPointerException np) {
+
         }
     }//GEN-LAST:event_buttonBuscarMatActionPerformed
 
     private void buttonEliminarMatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonEliminarMatActionPerformed
-        int c=Integer.parseInt(textCodigoMat.getText());
+        int c = Integer.parseInt(textCodigoMat.getText());
         mat.eliminarMateria(c);
     }//GEN-LAST:event_buttonEliminarMatActionPerformed
 
@@ -242,7 +240,6 @@ public class GestionMateria extends javax.swing.JInternalFrame {
         textNombreMat.setText("");
         textAñoMat.setText("");
     }//GEN-LAST:event_buttonNuevoActionPerformed
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton buttonBuscarMat;

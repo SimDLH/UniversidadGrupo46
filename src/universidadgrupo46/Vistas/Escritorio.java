@@ -16,7 +16,7 @@ public class Escritorio extends javax.swing.JFrame {
      */
     public Escritorio() {
         initComponents();
-
+        
     }
 
     /**
@@ -40,6 +40,7 @@ public class Escritorio extends javax.swing.JFrame {
         jMenu4 = new javax.swing.JMenu();
         jMenuItemAxMat = new javax.swing.JMenuItem();
         jMenuSalir = new javax.swing.JMenu();
+        jMenuItemSalir = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -119,6 +120,15 @@ public class Escritorio extends javax.swing.JFrame {
                 jMenuSalirActionPerformed(evt);
             }
         });
+
+        jMenuItemSalir.setText("Salir");
+        jMenuItemSalir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItemSalirActionPerformed(evt);
+            }
+        });
+        jMenuSalir.add(jMenuItemSalir);
+
         jMenuBar1.add(jMenuSalir);
 
         setJMenuBar(jMenuBar1);
@@ -145,7 +155,7 @@ public class Escritorio extends javax.swing.JFrame {
         escritorio.add(FormIns);
         escritorio.moveToFront(FormIns);
     }//GEN-LAST:event_jMenuItemFormInscripcionesActionPerformed
-
+    
     private void ManipulacionDeNotasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ManipulacionDeNotasActionPerformed
         escritorio.removeAll();
         escritorio.repaint();
@@ -154,7 +164,7 @@ public class Escritorio extends javax.swing.JFrame {
         escritorio.add(mdn);
         escritorio.moveToFront(mdn);
     }//GEN-LAST:event_ManipulacionDeNotasActionPerformed
-
+    
     private void JItemGestionAlumnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JItemGestionAlumnoActionPerformed
         escritorio.removeAll();
         escritorio.repaint();
@@ -163,7 +173,7 @@ public class Escritorio extends javax.swing.JFrame {
         escritorio.add(ga);
         escritorio.moveToFront(ga);
     }//GEN-LAST:event_JItemGestionAlumnoActionPerformed
-
+    
     private void jMenuItemGestionMatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemGestionMatActionPerformed
         escritorio.removeAll();
         escritorio.repaint();
@@ -172,7 +182,7 @@ public class Escritorio extends javax.swing.JFrame {
         escritorio.add(gM);
         escritorio.moveToFront(gM);
     }//GEN-LAST:event_jMenuItemGestionMatActionPerformed
-
+    
     private void jMenuItemAxMatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemAxMatActionPerformed
         escritorio.removeAll();
         escritorio.repaint();
@@ -181,10 +191,15 @@ public class Escritorio extends javax.swing.JFrame {
         escritorio.add(listado);
         escritorio.moveToFront(listado);
     }//GEN-LAST:event_jMenuItemAxMatActionPerformed
-
+    
     private void jMenuSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuSalirActionPerformed
-
+        
     }//GEN-LAST:event_jMenuSalirActionPerformed
+    
+    private void jMenuItemSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemSalirActionPerformed
+        
+        System.exit(0);
+    }//GEN-LAST:event_jMenuItemSalirActionPerformed
 
     /**
      * @param args the command line arguments
@@ -233,6 +248,7 @@ public class Escritorio extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItemAxMat;
     private javax.swing.JMenuItem jMenuItemFormInscripciones;
     private javax.swing.JMenuItem jMenuItemGestionMat;
+    private javax.swing.JMenuItem jMenuItemSalir;
     private javax.swing.JMenu jMenuSalir;
     // End of variables declaration//GEN-END:variables
 }

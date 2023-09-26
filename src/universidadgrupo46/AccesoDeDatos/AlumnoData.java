@@ -45,7 +45,7 @@ public class AlumnoData {
                 JOptionPane.showMessageDialog(null, "Alumno guardado");
             }
         } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null, "Error al acceder a la tabla alumno");
+            JOptionPane.showMessageDialog(null, "El dni ingresado ya esta registrado, intente de nuevo");
         }
     }
 

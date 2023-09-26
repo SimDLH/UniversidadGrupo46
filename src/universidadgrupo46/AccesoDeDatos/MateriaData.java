@@ -97,7 +97,7 @@ public class MateriaData {
             ps.setInt(1, id);
             int exito = ps.executeUpdate();
             if (exito == 1) {
-                JOptionPane.showMessageDialog(null, "alumno eliminado");
+                JOptionPane.showMessageDialog(null, "materia eliminado");
 
             }
         } catch (SQLException ex) {

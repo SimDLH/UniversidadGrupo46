@@ -6,6 +6,7 @@
 package universidadgrupo46.Vistas;
 
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import universidadgrupo46.AccesoDeDatos.AlumnoData;
 import universidadgrupo46.AccesoDeDatos.InscripcionData;
@@ -15,32 +16,32 @@ import universidadgrupo46.Entidades.Inscripcion;
 import universidadgrupo46.Entidades.Materia;
 
 public class ActualisacionDeNotas extends javax.swing.JInternalFrame {
-    
+
     private DefaultTableModel modelo = new DefaultTableModel() {
-        
+
         public boolean isCellEditable(int fila, int columna) {
             return true;//aca son editables fila y columna si es = false no lo son
         }
     };
-    
+
     AlumnoData aluData = new AlumnoData();
     MateriaData matData = new MateriaData();
     InscripcionData ins = new InscripcionData();
-    
+
     public ActualisacionDeNotas() {
         initComponents();
         ArrayList<Alumno> alumnosCombo = aluData.listarAlumno();
-        
+
         for (Alumno alu : alumnosCombo) {
             comboBoxAlumno.addItem(alu);
-            
+
         }
-        
+
         armarCabecera();
         //cargarNotas();
 
     }
-    
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -143,28 +144,33 @@ public class ActualisacionDeNotas extends javax.swing.JInternalFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void comboBoxAlumnoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_comboBoxAlumnoMouseClicked
-        
+
     }//GEN-LAST:event_comboBoxAlumnoMouseClicked
-    
+
     private void comboBoxAlumnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboBoxAlumnoActionPerformed
-        
+
         cargarNotas();
     }//GEN-LAST:event_comboBoxAlumnoActionPerformed
-    
+
     private void guardarNotaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_guardarNotaActionPerformed
-        int filaSeleccionada = tablaNotas.getSelectedRow();
-        System.out.println("" + filaSeleccionada);
-        if (filaSeleccionada != -1) {
-            int idAlumno = comboBoxAlumno.getItemAt(comboBoxAlumno.getSelectedIndex()).getIdAlumno();
-            int idMateria = Integer.parseInt(modelo.getValueAt(filaSeleccionada, 0).toString());
-            double nota = Double.parseDouble(modelo.getValueAt(filaSeleccionada, 2).toString());
-            ins.actualizarNota(idAlumno, idMateria, nota);
-            
+        try {
+            int filaSeleccionada = tablaNotas.getSelectedRow();
+            System.out.println("" + filaSeleccionada);
+            if (filaSeleccionada != -1) {
+                int idAlumno = comboBoxAlumno.getItemAt(comboBoxAlumno.getSelectedIndex()).getIdAlumno();
+                int idMateria = Integer.parseInt(modelo.getValueAt(filaSeleccionada, 0).toString());
+                double nota = Double.parseDouble(modelo.getValueAt(filaSeleccionada, 2).toString());
+                ins.actualizarNota(idAlumno, idMateria, nota);
+
+            }
+        } catch (NumberFormatException nf) {
+            JOptionPane.showMessageDialog(null, "Solo se admiten caracteres numericos");
+
         }
     }//GEN-LAST:event_guardarNotaActionPerformed
-    
+
     private void buttonSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonSalirActionPerformed
-        System.exit(0);
+        dispose();
     }//GEN-LAST:event_buttonSalirActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -183,21 +189,20 @@ public class ActualisacionDeNotas extends javax.swing.JInternalFrame {
         modelo.addColumn("Nota");
         tablaNotas.setModel(modelo);
     }
-    
+
     private void cargarNotas() {
         int id;
         id = comboBoxAlumno.getItemAt(comboBoxAlumno.getSelectedIndex()).getIdAlumno();
         ArrayList<Materia> listaNotas = ins.obtenerMateriasCursadas(id);
-        System.out.println("cantitad de rows encontradas: " + modelo.getRowCount());
-        
+
         for (int i = modelo.getRowCount() - 1; i >= 0; i--) {
             modelo.removeRow(i);
         }
-        
+
         for (Materia mat : listaNotas) {
             modelo.addRow(new Object[]{mat.getIdMateria(), mat.getNombre(), 0});
-            
+
         }
-        
+
     }
 }
