@@ -8,6 +8,7 @@ package universidadgrupo46.Vistas;
 import java.sql.Date;
 import java.time.LocalDate;
 import java.time.ZoneId;
+import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import universidadgrupo46.AccesoDeDatos.AlumnoData;
 import universidadgrupo46.Entidades.Alumno;
@@ -200,7 +201,9 @@ public class GestionAlumno extends javax.swing.JInternalFrame {
         try {
             if (textDoc.getText().isEmpty()) {
                 JOptionPane.showMessageDialog(null, "Tiene que llenar la planilla para ingresar un alumno");
-            } else {
+            } else if(buscarDni(Integer.parseInt(textDoc.getText()))){
+                JOptionPane.showMessageDialog(null, "El Documento ingresado ya le pertenece a un alumno registrado");
+            }else{
                 int dni = Integer.parseInt(textDoc.getText());
                 LocalDate fecha = chooseFecha.getDate().toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
                 Alumno alumno = new Alumno(dni, textApellido.getText(), textNombre.getText(), fecha, checkEstado.isSelected());
@@ -271,4 +274,17 @@ public class GestionAlumno extends javax.swing.JInternalFrame {
     private javax.swing.JTextField textDoc;
     private javax.swing.JTextField textNombre;
     // End of variables declaration//GEN-END:variables
+
+    private boolean buscarDni(int dni){
+        ArrayList<Alumno> alumno=al.listarAlumno();
+        boolean a=false;
+        for(Alumno alu:alumno){
+            if (alu.getDni()==dni){
+                a=true;
+                return a;
+            }
+        }
+        return a;
+    }
+
 }

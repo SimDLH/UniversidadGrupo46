@@ -142,7 +142,7 @@ public class InscripcionData {
     public ArrayList<Materia> obtenerMateriasCursadas(int idAlumno) {
         ArrayList<Materia> materias = new ArrayList<Materia>();
         String sql = "SELECT inscripcion.idMateria ,nombre ,año "
-                + " FROM inscripcion JOIN materia WHERE inscripcion.idMateria=materia.idMateria AND inscripcion.idAlumno=? AND idMateria=1 ";
+                + " FROM inscripcion JOIN materia WHERE inscripcion.idMateria=materia.idMateria AND inscripcion.idAlumno=? AND materia.estado=1 ";
         try {
             PreparedStatement ps = con.prepareStatement(sql);
             ps.setInt(1, idAlumno);
