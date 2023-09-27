@@ -169,19 +169,18 @@ public class GestionAlumno extends javax.swing.JInternalFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(checkEstado)
                     .addComponent(jLabel5))
-                .addGap(35, 35, 35)
+                .addGap(37, 37, 37)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel6)
-                            .addComponent(butonGuardar))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 41, Short.MAX_VALUE)
+                            .addComponent(butonGuardar)
+                            .addComponent(jLabel6))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 39, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(buttonNuevo)
                             .addComponent(butonSalir))
                         .addGap(23, 23, 23))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(16, 16, 16)
                         .addComponent(chooseFecha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
@@ -201,9 +200,9 @@ public class GestionAlumno extends javax.swing.JInternalFrame {
         try {
             if (textDoc.getText().isEmpty()) {
                 JOptionPane.showMessageDialog(null, "Tiene que llenar la planilla para ingresar un alumno");
-            } else if(buscarDni(Integer.parseInt(textDoc.getText()))){
+            } else if (buscarDni(Integer.parseInt(textDoc.getText()))) {
                 JOptionPane.showMessageDialog(null, "El Documento ingresado ya le pertenece a un alumno registrado");
-            }else{
+            } else {
                 int dni = Integer.parseInt(textDoc.getText());
                 LocalDate fecha = chooseFecha.getDate().toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
                 Alumno alumno = new Alumno(dni, textApellido.getText(), textNombre.getText(), fecha, checkEstado.isSelected());
@@ -275,12 +274,12 @@ public class GestionAlumno extends javax.swing.JInternalFrame {
     private javax.swing.JTextField textNombre;
     // End of variables declaration//GEN-END:variables
 
-    private boolean buscarDni(int dni){
-        ArrayList<Alumno> alumno=al.listarAlumno();
-        boolean a=false;
-        for(Alumno alu:alumno){
-            if (alu.getDni()==dni){
-                a=true;
+    private boolean buscarDni(int dni) {
+        ArrayList<Alumno> alumno = al.listarAlumno();
+        boolean a = false;
+        for (Alumno alu : alumno) {
+            if (alu.getDni() == dni) {
+                a = true;
                 return a;
             }
         }

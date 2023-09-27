@@ -90,15 +90,17 @@ public class MateriaData {
     }
 
     public void eliminarMateria(int id) {
-        String sql = "UPDATE materia SET estado=0 WHERE idMateria=?";
+        String sql = "UPDATE materia SET estado=0 WHERE idMateria=? AND estado=1";
 
         try {
             PreparedStatement ps = con.prepareStatement(sql);
             ps.setInt(1, id);
             int exito = ps.executeUpdate();
             if (exito == 1) {
-                JOptionPane.showMessageDialog(null, "materia eliminado");
+                JOptionPane.showMessageDialog(null, "materia eliminada");
 
+            } else {
+                JOptionPane.showMessageDialog(null, "no existe materia para ese iD");
             }
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, "Error al acceder a materia");
